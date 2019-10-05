@@ -43,7 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af702045f868d74bb8122d2bffd3828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmittedPrefab: {fileID: 0}
+  GearPrefab: {fileID: 3160392628231354186, guid: d42ac3c27b827e54ea2b5252db8f7c3c,
+    type: 3}
+  PlatePrefab: {fileID: 0}
+  EmittedType: 0
   LivingLimit: 2
   EmitCooldown: 10
   EmitCooldownJiggle: 5
+  Velocity: {x: 0, y: 0}

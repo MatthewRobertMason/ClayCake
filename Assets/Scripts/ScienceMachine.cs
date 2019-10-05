@@ -50,7 +50,7 @@ public class ScienceMachine : MonoBehaviour
         ProjectSprite.sprite = ResearchSteps[CurrentResearch].icon;
         ResearchProgress = new Dictionary<PartType, int>(); 
         foreach(CostItem item in ResearchSteps[CurrentResearch].cost) {
-            ResearchProgress[item.type] += item.number;
+            ResearchProgress[item.type] = item.number;
         }
     }
 

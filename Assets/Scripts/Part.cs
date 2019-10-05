@@ -13,7 +13,8 @@ public class Part : MonoBehaviour
 {
     public PartType Type;
     public Sprite KnownSprite;
-
+    PlayerData player;
+    public bool dropped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class Part : MonoBehaviour
         if (sm.DiscoveredParts.Contains(Type)) {
             Discover();
         }
+        player = Object.FindObjectOfType<PlayerData>();
     }
 
     // Called by the Progress Tracker on all parts of a given type when they become known
@@ -37,5 +39,14 @@ public class Part : MonoBehaviour
         if (Mathf.Abs(transform.position.x) > 10.0f || Mathf.Abs(transform.position.y) > 10.0f) {
             GameObject.Destroy(this.gameObject);
         }        
+    }
+
+    private void OnMouseOver()
+    {
+        if (!dropped) {
+            player.inventory.Add(Type);
+            Debug.LogFormat("Added {0} object to player inventory, now has {1} items.", Type, player.inventory.Count);
+            GameObject.Destroy(this.gameObject);
+        }
     }
 }

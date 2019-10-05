@@ -39,7 +39,7 @@ public class Emitter : MonoBehaviour
 
     void EmitObject()
     {
-        var obj = Instantiate(EmittedPrefab, transform.position, Quaternion.identity);
+        var obj = Instantiate(EmittedPrefab, transform.position, Quaternion.identity); ;
         obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Velocity.x, Velocity.y);
         //   obj.transform.Rotate(Vector3.up, Random.Range(-180.0f, 180.0f));
         living.Add(obj);

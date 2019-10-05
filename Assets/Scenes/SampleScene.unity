@@ -209,6 +209,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4404017560549900054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1841635015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841635017}
+  - component: {fileID: 1841635016}
+  m_Layer: 0
+  m_Name: PlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1841635016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841635015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5467e4b92405b4d42b0cd54aa6e593b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GearPrefab: {fileID: 3160392628231354186, guid: d42ac3c27b827e54ea2b5252db8f7c3c,
+    type: 3}
+  inventory: 
+--- !u!4 &1841635017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841635015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1162579, y: -0.87725335, z: 2.0156016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &506445295687440673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +328,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3160392628231354186, guid: d42ac3c27b827e54ea2b5252db8f7c3c,
         type: 3}
+    - target: {fileID: 506445296426141532, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 506445296426141532, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
+        type: 3}
+      propertyPath: EmitCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 506445296426141532, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
+        type: 3}
+      propertyPath: EmitCooldownJiggle
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c3e3a3b1cbd2f478256d7dba845c1f, type: 3}
 --- !u!1001 &4404017560549900054
@@ -299,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 4404017559408897863, guid: 6cc6650caa78ae142aac9bb55e5fd350,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4404017559408897863, guid: 6cc6650caa78ae142aac9bb55e5fd350,
         type: 3}
@@ -390,6 +451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: R1IdentifyGears.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714307214018998432, guid: 6cc6650caa78ae142aac9bb55e5fd350,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4404017559408897861, guid: 6cc6650caa78ae142aac9bb55e5fd350, type: 3}
