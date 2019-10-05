@@ -31,6 +31,7 @@ public class ScienceMachine : MonoBehaviour
     int CurrentResearch = -1;
     Dictionary<PartType, int> ResearchProgress;
 
+    public SpriteRenderer machineSprite;
     public SpriteRenderer ProjectSprite;
     public Sprite UnlockedSprite;
 
@@ -80,6 +81,11 @@ public class ScienceMachine : MonoBehaviour
             ResearchSteps[CurrentResearch].researchEffect.Invoke();
             NextResearch();
         }
+    }
+
+    public void R0UnlockResearch()
+    {
+        machineSprite.sprite = UnlockedSprite;
     }
 
     public void R1IdentifyGears() {
