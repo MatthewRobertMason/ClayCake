@@ -412,6 +412,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4404017559408897862, guid: 6cc6650caa78ae142aac9bb55e5fd350,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4404017559408897858, guid: 6cc6650caa78ae142aac9bb55e5fd350,
         type: 3}
       propertyPath: ResearchTree.Array.size
@@ -455,6 +460,11 @@ PrefabInstance:
     - target: {fileID: 1714307214018998432, guid: 6cc6650caa78ae142aac9bb55e5fd350,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282577954532919711, guid: 6cc6650caa78ae142aac9bb55e5fd350,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

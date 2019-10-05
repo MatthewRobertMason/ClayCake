@@ -22,6 +22,9 @@ public struct ResearchProject
 
 public class ScienceMachine : MonoBehaviour
 {
+    public bool hidden = true;
+    public Consumer input;
+
     public HashSet<PartType> DiscoveredParts = new HashSet<PartType>();
 
     public ResearchProject[] ResearchSteps;
@@ -34,8 +37,16 @@ public class ScienceMachine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Consumer>().Handler = ProgressMade;
+        input.Handler = ProgressMade;
         NextResearch();
+    }
+
+    public void Show()
+    {
+        hidden = false;
+        foreach(SpriteRenderer sp in GetComponentsInChildren<SpriteRenderer>()) {
+            sp.enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -57,6 +68,7 @@ public class ScienceMachine : MonoBehaviour
 
     void ProgressMade(PartType type)
     {
+        Debug.LogFormat("Science Machine got {0}", type);
         if (ResearchProgress.ContainsKey(type)) {
             ResearchProgress[type] -= 1;
             if(ResearchProgress[type] <= 0) {

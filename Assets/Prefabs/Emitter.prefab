@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506445296426141533}
   - component: {fileID: 506445296426141532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,10 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af702045f868d74bb8122d2bffd3828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GearPrefab: {fileID: 3160392628231354186, guid: d42ac3c27b827e54ea2b5252db8f7c3c,
-    type: 3}
-  PlatePrefab: {fileID: 0}
-  EmittedType: 0
+  EmittedPrefab: {fileID: 0}
   LivingLimit: 2
   EmitCooldown: 10
   EmitCooldownJiggle: 5

@@ -16,7 +16,7 @@ public class PlayerData : MonoBehaviour
     }
 
 
-    public List<PartType> inventory;
+    public List<PartType> inventory = new List<PartType>();
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,10 @@ public class PlayerData : MonoBehaviour
             foreach(Emitter x in FindObjectsOfType<Emitter>()) {
                 x.enabled = true;
             }
+        }
+
+        if (FindObjectOfType<ScienceMachine>().hidden && inventory.Count > 0) {
+            FindObjectOfType<ScienceMachine>().Show();
         }
 
         if (Input.GetMouseButtonDown(1)) {

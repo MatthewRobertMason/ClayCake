@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5240436043608945653}
   - component: {fileID: 5240436043608945654}
   - component: {fileID: 5240436043608945655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ConsumerComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5240436044511544350}
   - component: {fileID: 5240436044511544344}
   - component: {fileID: 5240436044511544351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
