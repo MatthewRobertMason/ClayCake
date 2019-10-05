@@ -12,7 +12,7 @@ public class Consumer : MonoBehaviour
     {
         var part = collision.gameObject.GetComponent<Part>();
         if (part) {
-            if (Filter.Contains(part.Type)) {
+            if (Filter.Count == 0 || Filter.Contains(part.Type)) {
                 if (Handler != null) {
                     Handler(part.Type);
                 } else {

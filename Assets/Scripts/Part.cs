@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
 public enum PartType
 {
     Gear
@@ -18,7 +18,8 @@ public class Part : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (ProgressTracker.IsDiscovered(Type)) {
+        var sm = Object.FindObjectOfType<ScienceMachine>();
+        if (sm.DiscoveredParts.Contains(Type)) {
             Discover();
         }
     }
