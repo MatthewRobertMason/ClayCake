@@ -23,7 +23,7 @@ public class CoverBox : MonoBehaviour
     void Update()
     {
         // Destroy automatically if out of bounds
-        if (Mathf.Abs(transform.position.x) > 10.0f || Mathf.Abs(transform.position.y) > 10.0f) {
+        if (Mathf.Abs(transform.position.x) > PlayerData.XMaximum || Mathf.Abs(transform.position.y) > PlayerData.YMaximum) {
             GameObject.Destroy(this.gameObject);
         }
     }

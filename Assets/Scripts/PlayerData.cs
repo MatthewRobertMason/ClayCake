@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public GameObject GearPrefab;
-
+    public static int XMaximum = 45;
+    public static int YMaximum = 20;
 
     ScienceMachine sm;
     bool dragging;
@@ -41,6 +42,16 @@ public class PlayerData : MonoBehaviour
         return hit.collider != null;
     }
 
+    Vector3 CameraBottomLeft()
+    {
+        return Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z));
+    }
+
+    Vector3 CameraTopRight()
+    {
+        return Camera.main.ViewportToWorldPoint(new Vector3(1, 1, -Camera.main.transform.position.z));
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -69,10 +80,8 @@ public class PlayerData : MonoBehaviour
             }
         }
 
-        Debug.Log(MouseOnObject());
-
         if (sm.PageMovement) {
-            var board = new Plane(new Vector3(0, 0, 1), -10);
+            var board = new Plane(new Vector3(0, 0, 1), 0);
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float hit_delta;
 
@@ -88,6 +97,24 @@ public class PlayerData : MonoBehaviour
                 var newPoint = ray.GetPoint(hit_delta);
                 Vector3 delta = dragAnchor - newPoint;
                 delta.z = 0;
+
+                var tr = CameraTopRight();
+                if (tr.x + delta.x > XMaximum) {
+                    delta.x = XMaximum - tr.x;
+                }
+                if(tr.y + delta.y > YMaximum) {
+                    delta.y = YMaximum - tr.y;
+                }
+
+                var bl = CameraBottomLeft();
+                if (bl.x + delta.x < -XMaximum) {
+                    delta.x = -XMaximum - bl.x;
+                }
+                if (bl.y + delta.y < -YMaximum) {
+                    delta.y = -YMaximum - bl.y;
+                }
+
+
                 Camera.main.transform.Translate(delta);
 
                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
