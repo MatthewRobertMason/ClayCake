@@ -37,11 +37,13 @@ public class ScienceMachine : MonoBehaviour
     public ResearchProject[] ResearchSteps;
     int CurrentResearch = -1;
     Dictionary<PartType, int> ResearchProgress;
+    float totalResearchParts = 0;
+    float currentResearchParts = 0;
 
     public SpriteRenderer machineSprite;
     public SpriteRenderer ProjectSprite;
-    public Sprite UnlockedSprite;
-
+    public SetCensor SpriteCensor;
+    const int MaxCensor = 128;
 
     public GameObject BuildMachinePrefab;
 
@@ -50,6 +52,7 @@ public class ScienceMachine : MonoBehaviour
     {
         input.Handler = ProgressMade;
         NextResearch();
+        SpriteCensor = ProjectSprite.gameObject.GetComponent<SetCensor>();
     }
 
     public void Show()
@@ -77,11 +80,15 @@ public class ScienceMachine : MonoBehaviour
             var xfactor = 0.6f / bounds.size.x;
             var factor = Mathf.Min(yfactor, xfactor);
             ProjectSprite.transform.localScale = new Vector3(factor, factor, factor);
+            SpriteCensor.CensorPixelLevel = MaxCensor;
         }
 
-        ResearchProgress = new Dictionary<PartType, int>(); 
-        foreach(CostItem item in ResearchSteps[CurrentResearch].cost) {
+        ResearchProgress = new Dictionary<PartType, int>();
+        totalResearchParts = 0;
+        currentResearchParts = 0;
+        foreach (CostItem item in ResearchSteps[CurrentResearch].cost) {
             ResearchProgress[item.type] = item.number;
+            totalResearchParts += item.number;
         }
     }
 
@@ -94,6 +101,8 @@ public class ScienceMachine : MonoBehaviour
             if(ResearchProgress[type] <= 0) {
                 ResearchProgress.Remove(type);
             }
+            currentResearchParts += 1;
+            SpriteCensor.CensorPixelLevel = (int)System.Math.Ceiling(MaxCensor * (1 - currentResearchParts/totalResearchParts));
         }
 
         if(ResearchProgress.Count == 0) {
@@ -104,7 +113,7 @@ public class ScienceMachine : MonoBehaviour
 
     public void R0UnlockResearch()
     {
-        machineSprite.sprite = UnlockedSprite;
+        GetComponent<SetCensor>().CensorPixelLevel = 1;
     }
 
     public void R1IdentifyGears() {
@@ -130,6 +139,19 @@ public class ScienceMachine : MonoBehaviour
     {
         PageMovement = true;
     }
+
+
+    public bool FanUnlocked = false;
+    public void R5UnlockFan()
+    {
+        FanUnlocked = true;
+    }
+
+    public void R6IdentifyPlate()
+    {
+        DiscoverPart(PartType.Plate);
+    }
+
 
     public void DiscoverPart(PartType type)
     {

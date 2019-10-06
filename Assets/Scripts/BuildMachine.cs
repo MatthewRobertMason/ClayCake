@@ -49,6 +49,7 @@ public class BuildMachine : MonoBehaviour
     public void RefreshButtons()
     {
         FunnelButton.SetActive(InventoryHas(FunnelCost) && sm.FunnelUnlocked);
+        FanButton.SetActive(InventoryHas(FanCost) && sm.FanUnlocked);
     }
 
     public GameObject FunnelButton;
@@ -59,6 +60,18 @@ public class BuildMachine : MonoBehaviour
         if(InventoryHas(FunnelCost)){
             Instantiate(FunnelPrefab, transform.position + new Vector3(-3, 0, 0), Quaternion.identity);
             InventoryRemove(FunnelCost);
+            RefreshButtons();
+        }
+    }
+
+    public GameObject FanButton;
+    public GameObject FanPrefab;
+    CostItem[] FanCost = { new CostItem(PartType.Gear, 30) };
+    public void OnBuildFan()
+    {
+        if (InventoryHas(FanCost)) {
+            Instantiate(FanPrefab, transform.position + new Vector3(-3, 0, 0), Quaternion.identity);
+            InventoryRemove(FanCost);
             RefreshButtons();
         }
     }

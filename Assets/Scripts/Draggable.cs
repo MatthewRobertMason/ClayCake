@@ -5,12 +5,21 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour
 {
+    public bool AllowRotate = false;
     bool dragging = false;
     Vector3 dragAnchor;
+    public GameObject target;
+    public GameObject rotateTarget;
+
+    private void Start()
+    {
+        if (target == null) target = gameObject;
+        if (rotateTarget == null) rotateTarget = gameObject;
+    }
 
     private void OnMouseUp()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) {
+        if (EventSystem.current && EventSystem.current.IsPointerOverGameObject()) {
             return;
         }
         dragging = false;
@@ -18,7 +27,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) {
+        if (EventSystem.current && EventSystem.current.IsPointerOverGameObject()) {
             return;
         }
         dragging = true;
@@ -29,7 +38,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) {
+        if (EventSystem.current && EventSystem.current.IsPointerOverGameObject()) {
             return;
         }
         if (dragging) {
@@ -38,9 +47,15 @@ public class Draggable : MonoBehaviour
             var newPosition = Camera.main.ScreenToWorldPoint(pos);
             var delta = newPosition - dragAnchor;
             delta.z = 0;
-            transform.Translate(delta);            
+            target.transform.Translate(delta);
             dragAnchor = newPosition;
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonUp(2) && AllowRotate) {
+            rotateTarget.transform.Rotate(new Vector3(0, 0, 1), 45);
+        }
+    }
 }

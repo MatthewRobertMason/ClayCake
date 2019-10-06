@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public GameObject GearPrefab;
+    public GameObject PlatePrefab;
     public static int XMaximum = 45;
     public static int YMaximum = 20;
 
@@ -16,6 +17,7 @@ public class PlayerData : MonoBehaviour
     {
         switch (type) {
             case PartType.Gear: return Instantiate(GearPrefab, position, Quaternion.identity);
+            case PartType.Plate: return Instantiate(PlatePrefab, position, Quaternion.identity);
         }
         return null;
     }

@@ -6,13 +6,14 @@ using UnityEngine;
 public enum PartType
 {
     Gear,
+    Plate,
 }
 
 
 
 public class Part : MonoBehaviour
 {
-    static public PartType[] AllTypes = { PartType.Gear };
+    static public PartType[] AllTypes = { PartType.Gear, PartType.Plate };
 
     public PartType Type;
     public Sprite KnownSprite;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685801548529949266}
   - component: {fileID: 6409253699317303023}
+  - component: {fileID: 4209011929945588217}
   m_Layer: 8
   m_Name: CurrentTaskIcon
   m_TagString: Untagged
@@ -48,7 +49,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62bb4cb41b3efa1418382a93be9bb35a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +81,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4209011929945588217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714307214018998432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2ee17f30262f146a9315091a34d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CensorPixelLevel: 16
 --- !u!1 &4404017559408897881
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +105,7 @@ GameObject:
   - component: {fileID: 4404017559408897863}
   - component: {fileID: 4404017559408897862}
   - component: {fileID: 4404017559408897860}
+  - component: {fileID: 8102573299718832841}
   - component: {fileID: 4404017559408897858}
   m_Layer: 8
   m_Name: ScienceMachine
@@ -133,7 +148,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62bb4cb41b3efa1418382a93be9bb35a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 164af588bb227694ba61aa89bfb15a74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 066049b57f86dcf4b91313d591cc8ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -182,7 +197,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,6 +216,19 @@ PolygonCollider2D:
       - {x: 1.0621629, y: 1.2377493}
       - {x: 1.2005289, y: 1.0867467}
       - {x: 0.9032681, y: -0.9716735}
+--- !u!114 &8102573299718832841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404017559408897881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2ee17f30262f146a9315091a34d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CensorPixelLevel: 18
 --- !u!114 &4404017559408897858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,13 +334,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - icon: {fileID: 21300000, guid: 866d02a23b63a70408e4373778cb99c0, type: 3}
+    cost:
+    - type: 0
+      number: 30
+    researchEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4404017559408897858}
+          m_MethodName: R5UnlockFan
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   machineSprite: {fileID: 4404017559408897862}
   ProjectSprite: {fileID: 6409253699317303023}
-  UnlockedSprite: {fileID: 21300000, guid: 066049b57f86dcf4b91313d591cc8ab9, type: 3}
+  SpriteCensor: {fileID: 0}
   BuildMachinePrefab: {fileID: 3580643670233190081, guid: 16131ac40bf0b8f4a9c5b78fde4a5db5,
     type: 3}
   FunnelUnlocked: 0
   PageMovement: 0
+  FanUnlocked: 0
 --- !u!1001 &3463022942862269236
 PrefabInstance:
   m_ObjectHideFlags: 0

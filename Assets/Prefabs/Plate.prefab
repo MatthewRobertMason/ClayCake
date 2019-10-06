@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e062ea86ef27e04793876d8478f6977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   KnownSprite: {fileID: 21300000, guid: f725ca55fc84e2840b61b1de07ddb0db, type: 3}
   dropped: 0
 --- !u!50 &7712060295664821423
