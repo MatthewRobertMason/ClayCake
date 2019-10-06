@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685801548529949266}
   - component: {fileID: 6409253699317303023}
+  - component: {fileID: 6481220839213382711}
   m_Layer: 8
   m_Name: CurrentTaskIcon
   m_TagString: Untagged
@@ -48,7 +49,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62bb4cb41b3efa1418382a93be9bb35a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +81,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6481220839213382711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714307214018998432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2ee17f30262f146a9315091a34d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CensorPixelLevel: 16
 --- !u!1 &4404017559408897881
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4404017559408897863}
   - component: {fileID: 4404017559408897862}
+  - component: {fileID: 17298551149796772}
   - component: {fileID: 4404017559408897858}
   m_Layer: 8
   m_Name: ScienceMachine
@@ -132,7 +147,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62bb4cb41b3efa1418382a93be9bb35a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -164,6 +179,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &17298551149796772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404017559408897881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2ee17f30262f146a9315091a34d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CensorPixelLevel: 16
 --- !u!114 &4404017559408897858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,13 +297,31 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - icon: {fileID: 21300000, guid: 866d02a23b63a70408e4373778cb99c0, type: 3}
+    cost:
+    - type: 0
+      number: 25
+    researchEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4404017559408897858}
+          m_MethodName: R5UnlockFan
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   machineSprite: {fileID: 4404017559408897862}
   ProjectSprite: {fileID: 6409253699317303023}
-  UnlockedSprite: {fileID: 21300000, guid: 066049b57f86dcf4b91313d591cc8ab9, type: 3}
   BuildMachinePrefab: {fileID: 3580643670233190081, guid: 16131ac40bf0b8f4a9c5b78fde4a5db5,
     type: 3}
   FunnelUnlocked: 0
   PageMovement: 0
+  FanUnlocked: 0
 --- !u!1001 &3463022942862269236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,11 +484,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2780329578095458316, guid: e4f38642e808ebd4fa95cc83bd5e156d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6233278888982112411, guid: e4f38642e808ebd4fa95cc83bd5e156d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -454,6 +495,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016026830366437919, guid: e4f38642e808ebd4fa95cc83bd5e156d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780329578095458316, guid: e4f38642e808ebd4fa95cc83bd5e156d,
         type: 3}
       propertyPath: m_Enabled
       value: 0

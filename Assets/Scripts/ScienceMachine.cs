@@ -42,7 +42,7 @@ public class ScienceMachine : MonoBehaviour
 
     public SpriteRenderer machineSprite;
     public SpriteRenderer ProjectSprite;
-    public SetCensor SpriteCensor;
+    SetCensor SpriteCensor;
     const int MaxCensor = 128;
 
     public GameObject BuildMachinePrefab;
