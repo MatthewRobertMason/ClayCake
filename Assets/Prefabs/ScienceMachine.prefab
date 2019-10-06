@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1714307214018998432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.35, y: -0.3, z: -1}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 1}
   m_Children: []
   m_Father: {fileID: 4404017559408897863}
   m_RootOrder: 1
@@ -237,7 +237,7 @@ MonoBehaviour:
   - icon: {fileID: 21300000, guid: 60d132eb21919b14fa9a4be356f88333, type: 3}
     cost:
     - type: 0
-      number: 10
+      number: 3
     researchEffect:
       m_PersistentCalls:
         m_Calls:
@@ -252,9 +252,29 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - icon: {fileID: 21300000, guid: ba96dc73b1c7dbd4b9de9b67f0db2999, type: 3}
+    cost:
+    - type: 0
+      number: 5
+    researchEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4404017559408897858}
+          m_MethodName: R2UnlockBuildMachine
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   machineSprite: {fileID: 4404017559408897862}
   ProjectSprite: {fileID: 6409253699317303023}
   UnlockedSprite: {fileID: 21300000, guid: 066049b57f86dcf4b91313d591cc8ab9, type: 3}
+  BuildMachinePrefab: {fileID: 3580643670233190081, guid: 16131ac40bf0b8f4a9c5b78fde4a5db5,
+    type: 3}
 --- !u!1001 &3463022942862269236
 PrefabInstance:
   m_ObjectHideFlags: 0

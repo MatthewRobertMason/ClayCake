@@ -5,12 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public enum PartType
 {
-    Gear
+    Gear,
 }
+
 
 
 public class Part : MonoBehaviour
 {
+    static public PartType[] AllTypes = { PartType.Gear };
+
     public PartType Type;
     public Sprite KnownSprite;
     PlayerData player;

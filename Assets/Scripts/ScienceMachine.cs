@@ -7,6 +7,12 @@ using UnityEngine.Events;
 [System.Serializable]
 public struct CostItem
 {
+    public CostItem(PartType i, int v)
+    {
+        type = i;
+        number = v;
+    }
+
     public PartType type;
     public int number;
 }
@@ -34,6 +40,9 @@ public class ScienceMachine : MonoBehaviour
     public SpriteRenderer machineSprite;
     public SpriteRenderer ProjectSprite;
     public Sprite UnlockedSprite;
+
+
+    public GameObject BuildMachinePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -94,7 +103,7 @@ public class ScienceMachine : MonoBehaviour
 
     public void R2UnlockBuildMachine()
     {
-
+        Instantiate(BuildMachinePrefab, transform.position + new Vector3(13, 0, 0), Quaternion.identity);
     }
 
     public void DiscoverPart(PartType type)
