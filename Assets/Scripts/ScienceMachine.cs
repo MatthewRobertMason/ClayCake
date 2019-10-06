@@ -116,6 +116,12 @@ public class ScienceMachine : MonoBehaviour
         }
     }
 
+    public bool PageMovement = false;
+    public void R4UnlockMoving()
+    {
+        PageMovement = true;
+    }
+
     public void DiscoverPart(PartType type)
     {
         DiscoveredParts.Add(type);
