@@ -50,7 +50,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: 1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -70,6 +70,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -78,7 +114,26 @@ TextureImporter:
       - {x: -256, y: 256}
       - {x: 256, y: 256}
       - {x: 256, y: -256}
-    physicsShape: []
+    physicsShape:
+    - - {x: 131, y: 96}
+      - {x: 127, y: 98}
+      - {x: 92, y: 64}
+      - {x: -108, y: 64}
+      - {x: -142, y: 98}
+      - {x: -146, y: 96}
+      - {x: -146, y: 95}
+      - {x: -146, y: 62}
+      - {x: -146, y: 61}
+      - {x: -135, y: -11}
+      - {x: -135, y: -30}
+      - {x: -146, y: -103}
+      - {x: -146, y: -122}
+      - {x: -140, y: -130}
+      - {x: -137, y: -131}
+      - {x: 113, y: -131}
+      - {x: 115, y: -129}
+      - {x: 115, y: 79}
+      - {x: 131, y: 95}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
