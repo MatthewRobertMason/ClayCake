@@ -70,6 +70,15 @@ public class ScienceMachine : MonoBehaviour
     {
         CurrentResearch++;
         ProjectSprite.sprite = ResearchSteps[CurrentResearch].icon;
+
+        if (ProjectSprite.sprite) {
+            var bounds = ProjectSprite.sprite.bounds;
+            var yfactor = 0.6f / bounds.size.y;
+            var xfactor = 0.6f / bounds.size.x;
+            var factor = Mathf.Min(yfactor, xfactor);
+            ProjectSprite.transform.localScale = new Vector3(factor, factor, factor);
+        }
+
         ResearchProgress = new Dictionary<PartType, int>(); 
         foreach(CostItem item in ResearchSteps[CurrentResearch].cost) {
             ResearchProgress[item.type] = item.number;
