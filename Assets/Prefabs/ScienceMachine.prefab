@@ -270,11 +270,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - icon: {fileID: 21300000, guid: 8ad00e315b60c924eb2bc479d213fd02, type: 3}
+    cost:
+    - type: 0
+      number: 10
+    researchEffect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4404017559408897858}
+          m_MethodName: R3UnlockFunnel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   machineSprite: {fileID: 4404017559408897862}
   ProjectSprite: {fileID: 6409253699317303023}
   UnlockedSprite: {fileID: 21300000, guid: 066049b57f86dcf4b91313d591cc8ab9, type: 3}
   BuildMachinePrefab: {fileID: 3580643670233190081, guid: 16131ac40bf0b8f4a9c5b78fde4a5db5,
     type: 3}
+  FunnelUnlocked: 0
 --- !u!1001 &3463022942862269236
 PrefabInstance:
   m_ObjectHideFlags: 0

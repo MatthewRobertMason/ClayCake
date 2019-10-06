@@ -10,6 +10,7 @@ public class BuildMachine : MonoBehaviour
     public Consumer input;
     public HashSet<PartType> DiscoveredParts = new HashSet<PartType>();
     Dictionary<PartType, int> Inventory = new Dictionary<PartType, int>();
+    ScienceMachine sm;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class BuildMachine : MonoBehaviour
         }
         input.Handler = Input;
         RefreshButtons();
+        sm = FindObjectOfType<ScienceMachine>();
     }
 
     void Input(PartType type)
@@ -44,9 +46,9 @@ public class BuildMachine : MonoBehaviour
         }
     }
 
-    void RefreshButtons()
+    public void RefreshButtons()
     {
-        FunnelButton.SetActive(InventoryHas(FunnelCost));
+        FunnelButton.SetActive(InventoryHas(FunnelCost) && sm.FunnelUnlocked);
     }
 
     public GameObject FunnelButton;

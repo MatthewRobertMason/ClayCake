@@ -31,6 +31,7 @@ public class ScienceMachine : MonoBehaviour
     public bool hidden = true;
     public Consumer input;
 
+
     public HashSet<PartType> DiscoveredParts = new HashSet<PartType>();
 
     public ResearchProject[] ResearchSteps;
@@ -104,6 +105,15 @@ public class ScienceMachine : MonoBehaviour
     public void R2UnlockBuildMachine()
     {
         Instantiate(BuildMachinePrefab, transform.position + new Vector3(13, 0, 0), Quaternion.identity);
+    }
+
+    public bool FunnelUnlocked = false;
+    public void R3UnlockFunnel()
+    {
+        FunnelUnlocked = true;
+        foreach(BuildMachine b in Object.FindObjectsOfType<BuildMachine>()) {
+            b.RefreshButtons();
+        }
     }
 
     public void DiscoverPart(PartType type)
