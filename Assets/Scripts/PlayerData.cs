@@ -22,6 +22,11 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+
+        // FOR DEBUGGING
+        for(int ii = 0; ii < 50; ii++) {
+            inventory.Add(PartType.Gear);
+        }
     }
 
     // Update is called once per frame

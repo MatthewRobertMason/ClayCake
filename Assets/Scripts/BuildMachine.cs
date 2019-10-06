@@ -37,16 +37,27 @@ public class BuildMachine : MonoBehaviour
         return true;
     }
 
+    void InventoryRemove(CostItem[] items)
+    {
+        foreach (var item in items) {
+            Inventory[item.type] -= item.number;
+        }
+    }
+
     void RefreshButtons()
     {
         FunnelButton.SetActive(InventoryHas(FunnelCost));
     }
 
     public GameObject FunnelButton;
+    public GameObject FunnelPrefab;
     CostItem[] FunnelCost = { new CostItem(PartType.Gear, 10) };
     public void OnBuildFunnel()
     {
-        Debug.Log("Funnel");
-        RefreshButtons();
+        if(InventoryHas(FunnelCost)){
+            Instantiate(FunnelPrefab, transform.position + new Vector3(-3, 0, 0), Quaternion.identity);
+            InventoryRemove(FunnelCost);
+            RefreshButtons();
+        }
     }
 }

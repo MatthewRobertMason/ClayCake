@@ -167,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 8721436883943858012}
   FunnelButton: {fileID: 7023914225207699757}
+  FunnelPrefab: {fileID: 6197019687853184027, guid: e065dccf8f73cc14aa392eb01df459d7,
+    type: 3}
 --- !u!50 &430359382106943504
 Rigidbody2D:
   serializedVersion: 4
@@ -572,7 +574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8366173002452549616}
-        m_MethodName: OnFunnelButtonPress
+        m_MethodName: OnBuildFunnel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

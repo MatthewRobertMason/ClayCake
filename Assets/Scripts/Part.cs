@@ -52,4 +52,11 @@ public class Part : MonoBehaviour
             GameObject.Destroy(this.gameObject);
         }
     }
+
+    private void OnMouseUpAsButton()
+    {
+        player.inventory.Add(Type);
+        Debug.LogFormat("Added {0} object to player inventory, now has {1} items.", Type, player.inventory.Count);
+        GameObject.Destroy(this.gameObject);
+    }
 }
