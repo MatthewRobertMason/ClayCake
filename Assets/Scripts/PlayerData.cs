@@ -36,9 +36,9 @@ public class PlayerData : MonoBehaviour
 
     bool MouseOnObject()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        return Physics.Raycast(ray, out hit);
+        var pt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(pt, Vector2.zero, Mathf.Infinity, Physics.AllLayers);
+        return hit.collider != null;
     }
 
     // Update is called once per frame
@@ -68,6 +68,8 @@ public class PlayerData : MonoBehaviour
                 obj.GetComponent<Part>().dropped = true;
             }
         }
+
+        Debug.Log(MouseOnObject());
 
         if (sm.PageMovement) {
             var board = new Plane(new Vector3(0, 0, 1), -10);
