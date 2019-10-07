@@ -75,7 +75,7 @@ public class BuildMachine : MonoBehaviour
     bool InventoryHas(CostItem[] items)
     {
         foreach (var item in items) {
-            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
+            if (!Inventory.ContainsKey(item.type) || Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return false;
             }
         }
@@ -85,7 +85,7 @@ public class BuildMachine : MonoBehaviour
     PartType MissingPart()
     {
         foreach (var item in CurrentCost()) {
-            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
+            if (!Inventory.ContainsKey(item.type) || Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return item.type;
             }
         }
