@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 506445296426141532}
   - component: {fileID: 4320193260856046472}
   - component: {fileID: 892166698205543174}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,8 @@ MonoBehaviour:
   EmitCooldown: 10
   EmitCooldownJiggle: 5
   Velocity: {x: 0, y: 0}
+  ExtraCapacity: 0
+  currentCooldown: 0
 --- !u!50 &4320193260856046472
 Rigidbody2D:
   serializedVersion: 4

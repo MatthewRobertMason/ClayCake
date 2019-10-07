@@ -6,6 +6,7 @@ public class PlayerData : MonoBehaviour
 {
     public GameObject GearPrefab;
     public GameObject PlatePrefab;
+    public GameObject CircuitPrefab;
 
     public FadeMusic fadeMusic;
     public GameObject LeftClickerImage;
@@ -35,6 +36,7 @@ public class PlayerData : MonoBehaviour
         switch (type) {
             case PartType.Gear: return Instantiate(GearPrefab, position, Quaternion.identity);
             case PartType.Plate: return Instantiate(PlatePrefab, position, Quaternion.identity);
+            case PartType.Circuit: return Instantiate(CircuitPrefab, position, Quaternion.identity);
         }
         return null;
     }
@@ -44,6 +46,7 @@ public class PlayerData : MonoBehaviour
         switch (type) {
             case PartType.Gear: return GearPrefab.GetComponent<Part>().KnownSprite;
             case PartType.Plate: return PlatePrefab.GetComponent<Part>().KnownSprite;
+            case PartType.Circuit: return CircuitPrefab.GetComponent<Part>().KnownSprite;
         }
         return null;
     }
@@ -57,7 +60,7 @@ public class PlayerData : MonoBehaviour
 
         // FOR DEBUGGING
         for(int ii = 0; ii < 50; ii++) {
-            inventory.Add(PartType.Gear);
+        //    inventory.Add(PartType.Gear);
         }
         sm = FindObjectOfType<ScienceMachine>();
     }

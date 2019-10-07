@@ -12,7 +12,7 @@ public class Booster : MonoBehaviour
     {
         capacityTimer += Time.deltaTime;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Boxes"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("UI"));
         if (hit.collider) {
             var emitter = hit.collider.GetComponent<Emitter>();
             if (emitter) {
