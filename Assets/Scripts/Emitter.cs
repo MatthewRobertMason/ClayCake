@@ -9,8 +9,9 @@ public class Emitter : MonoBehaviour
     public float EmitCooldown = 3;
     public float EmitCooldownJiggle = 2;
     public Vector2 Velocity = new Vector2(0, 0);
+    public int ExtraCapacity = 0;
 
-    private float currentCooldown;
+    public float currentCooldown;
     private List<GameObject> living = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class Emitter : MonoBehaviour
     void Update()
     {
         currentCooldown -= Time.deltaTime;
-        if (living.Count < LivingLimit || LivingLimit < 0) {
+        if (living.Count < LivingLimit + ExtraCapacity || LivingLimit < 0) {
             if(currentCooldown <= 0) {
                 EmitObject();
                 ResetCooldown();
@@ -42,6 +43,10 @@ public class Emitter : MonoBehaviour
         var obj = Instantiate(EmittedPrefab, transform.position, Quaternion.identity); ;
         obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Velocity.x, Velocity.y);
         //   obj.transform.Rotate(Vector3.up, Random.Range(-180.0f, 180.0f));
-        living.Add(obj);
+        if (ExtraCapacity > 0) {
+            ExtraCapacity--;
+        } else {
+            living.Add(obj);
+        }
     }
 }
