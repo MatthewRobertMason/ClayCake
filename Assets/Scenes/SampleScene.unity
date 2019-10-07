@@ -2503,7 +2503,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have built the portal and now you can go home!
+  m_Text: 'You have reached Peak Performance!
+
+    You can use the portal to go home!'
 --- !u!222 &1930966267
 CanvasRenderer:
   m_ObjectHideFlags: 0
