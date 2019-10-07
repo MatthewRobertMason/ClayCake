@@ -475,6 +475,10 @@ MonoBehaviour:
     type: 3}
   FanPrefab: {fileID: 4308995092312900051, guid: 9395314318ec7294f96b5df7ed7eaeb8,
     type: 3}
+  BoosterPrefab: {fileID: 2177334466726872449, guid: 939aa128984a07f488e83795eb1842b2,
+    type: 3}
+  PortalPrefab: {fileID: 4906073705583747353, guid: df0e0f470f6055f4ba147ce7632852ea,
+    type: 3}
 --- !u!50 &430359382106943504
 Rigidbody2D:
   serializedVersion: 4
