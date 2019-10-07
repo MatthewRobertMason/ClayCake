@@ -17,7 +17,6 @@ public class Part : MonoBehaviour
     static public PartType[] AllTypes = { PartType.Gear, PartType.Plate };
 
     public PartType Type;
-    public Sprite KnownSprite;
     PlayerData player;
     public bool dropped = false;
 
@@ -34,7 +33,7 @@ public class Part : MonoBehaviour
     // Called by the Progress Tracker on all parts of a given type when they become known
     public void Discover()
     {
-        GetComponent<SpriteRenderer>().sprite = KnownSprite;
+        GetComponent<SetCensor>().CensorPixelLevel = 1;
     }
 
     // Update is called once per frame

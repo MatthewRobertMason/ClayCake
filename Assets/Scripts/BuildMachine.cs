@@ -26,6 +26,8 @@ public class BuildMachine : MonoBehaviour
     CostItem[] BoosterCost = { new CostItem(PartType.Gear, 10), new CostItem(PartType.Plate, 20) };
     CostItem[] PortalCost = { new CostItem(PartType.Gear, 50), new CostItem(PartType.Plate, 50), new CostItem(PartType.Circuit, 50) };
 
+    public Sprite[] BuildIconsSprites;
+
     private int current = 0;
     private GameObject[] buildOptions;
 
@@ -73,7 +75,7 @@ public class BuildMachine : MonoBehaviour
     bool InventoryHas(CostItem[] items)
     {
         foreach (var item in items) {
-            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
+            if (!Inventory.ContainsKey(item.type) || Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return false;
             }
         }
@@ -83,7 +85,7 @@ public class BuildMachine : MonoBehaviour
     PartType MissingPart()
     {
         foreach (var item in CurrentCost()) {
-            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
+            if (!Inventory.ContainsKey(item.type) || Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return item.type;
             }
         }
@@ -106,7 +108,7 @@ public class BuildMachine : MonoBehaviour
     public void RefreshButtons()
     {
         ProductionIcon.transform.localScale = new Vector3(1, 1, 1);
-        ProductionIcon.GetComponent<SpriteRenderer>().sprite = buildOptions[current].GetComponentInChildren<SpriteRenderer>().sprite;
+        ProductionIcon.GetComponent<SpriteRenderer>().sprite = BuildIconsSprites[current];
 
         var bounds = ProductionIcon.GetComponent<SpriteRenderer>().bounds;
         var yfactor = 0.9f / bounds.size.y;
@@ -135,7 +137,7 @@ public class BuildMachine : MonoBehaviour
                 BuildButton.GetComponent<Image>().color = new Color(0.7f, 0.2f, 0.2f);
             }
         } else {
-            ProductionIcon.GetComponent<SetCensor>().CensorPixelLevel = 64;
+            ProductionIcon.GetComponent<SetCensor>().CensorPixelLevel = 16;
             MissingIcon.SetActive(false);
             BuildButton.GetComponent<Image>().color = new Color(0.7f, 0.2f, 0.2f);
         }

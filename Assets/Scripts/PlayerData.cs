@@ -44,9 +44,9 @@ public class PlayerData : MonoBehaviour
     public Sprite PartSprite(PartType type)
     {
         switch (type) {
-            case PartType.Gear: return GearPrefab.GetComponent<Part>().KnownSprite;
-            case PartType.Plate: return PlatePrefab.GetComponent<Part>().KnownSprite;
-            case PartType.Circuit: return CircuitPrefab.GetComponent<Part>().KnownSprite;
+            case PartType.Gear: return GearPrefab.GetComponent<SpriteRenderer>().sprite;
+            case PartType.Plate: return PlatePrefab.GetComponent<SpriteRenderer>().sprite;
+            case PartType.Circuit: return CircuitPrefab.GetComponent<SpriteRenderer>().sprite;
         }
         return null;
     }

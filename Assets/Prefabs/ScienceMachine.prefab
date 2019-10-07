@@ -39,7 +39,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714307214018998432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -209,7 +209,7 @@ MonoBehaviour:
   hidden: 1
   input: {fileID: 8478011397078030601}
   ResearchSteps:
-  - icon: {fileID: 0}
+  - icon: {fileID: 1202984965197363600, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 0
       number: 3
@@ -227,7 +227,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: 60d132eb21919b14fa9a4be356f88333, type: 3}
+  - icon: {fileID: 21300000, guid: ba96dc73b1c7dbd4b9de9b67f0db2999, type: 3}
     cost:
     - type: 0
       number: 3
@@ -245,7 +245,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: ba96dc73b1c7dbd4b9de9b67f0db2999, type: 3}
+  - icon: {fileID: 1161201145128540330, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 0
       number: 5
@@ -263,7 +263,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: 8ad00e315b60c924eb2bc479d213fd02, type: 3}
+  - icon: {fileID: 184950751378207249, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 0
       number: 10
@@ -299,7 +299,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: 866d02a23b63a70408e4373778cb99c0, type: 3}
+  - icon: {fileID: 2130535880278150251, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 0
       number: 25
@@ -335,7 +335,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: 128f0740b0823ca4b8a2b77bba6dc401, type: 3}
+  - icon: {fileID: 5543941588292853863, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 1
       number: 25
@@ -373,7 +373,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - icon: {fileID: 21300000, guid: 4e7b86d56a652c546b515bc17ce63c05, type: 3}
+  - icon: {fileID: -1863859237976802683, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
     cost:
     - type: 1
       number: 50

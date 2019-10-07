@@ -43,7 +43,7 @@ public class ScienceMachine : MonoBehaviour
     public SpriteRenderer machineSprite;
     public SpriteRenderer ProjectSprite;
     SetCensor SpriteCensor;
-    const int MaxCensor = 128;
+    const int MaxCensor = 32;
     bool MouseOver = false;
 
     public GameObject BuildMachinePrefab;
@@ -56,8 +56,8 @@ public class ScienceMachine : MonoBehaviour
     void Start()
     {
         input.Handler = ProgressMade;
-        NextResearch();
         SpriteCensor = ProjectSprite.gameObject.GetComponent<SetCensor>();
+        NextResearch();
     }
 
     public void Show()
