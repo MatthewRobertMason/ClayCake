@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_Name
-      value: Emitter (1)
+      value: Gear-Emitter-2
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -573,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_Name
-      value: Emitter (2)
+      value: Gear-Emitter-3
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -753,7 +753,7 @@ PrefabInstance:
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -948,7 +948,7 @@ PrefabInstance:
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_Name
-      value: Emitter
+      value: Gear-Emitter-1
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141530, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
