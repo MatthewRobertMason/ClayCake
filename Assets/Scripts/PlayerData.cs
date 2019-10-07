@@ -13,6 +13,17 @@ public class PlayerData : MonoBehaviour
     public static int XMaximum = 45;
     public static int YMaximum = 20;
 
+    public bool FastModeActive = false;
+
+    public static int ScaleCost(int cost)
+    {
+        bool active = FindObjectOfType<PlayerData>().FastModeActive;
+        if (active) {
+            return cost / 10 + 1;
+        }
+        return cost;
+    }
+
     public GameObject MouseFlashPrefab;
 
     ScienceMachine sm;

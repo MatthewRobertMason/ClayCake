@@ -73,7 +73,7 @@ public class BuildMachine : MonoBehaviour
     bool InventoryHas(CostItem[] items)
     {
         foreach (var item in items) {
-            if (Inventory[item.type] < item.number) {
+            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return false;
             }
         }
@@ -83,7 +83,7 @@ public class BuildMachine : MonoBehaviour
     PartType MissingPart()
     {
         foreach (var item in CurrentCost()) {
-            if (Inventory[item.type] < item.number) {
+            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return item.type;
             }
         }
@@ -93,7 +93,7 @@ public class BuildMachine : MonoBehaviour
     void InventoryRemove(CostItem[] items)
     {
         foreach (var item in items) {
-            Inventory[item.type] -= item.number;
+            Inventory[item.type] -= PlayerData.ScaleCost(item.number);
         }
     }
 

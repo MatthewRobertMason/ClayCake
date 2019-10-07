@@ -115,8 +115,9 @@ public class ScienceMachine : MonoBehaviour
         totalResearchParts = 0;
         currentResearchParts = 0;
         foreach (CostItem item in ResearchSteps[CurrentResearch].cost) {
-            ResearchProgress[item.type] = item.number;
-            totalResearchParts += item.number;
+            int number = PlayerData.ScaleCost(item.number);
+            ResearchProgress[item.type] = number;
+            totalResearchParts += number;
         }
     }
 
