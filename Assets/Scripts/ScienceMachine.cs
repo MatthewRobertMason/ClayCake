@@ -35,7 +35,7 @@ public class ScienceMachine : MonoBehaviour
     public HashSet<PartType> DiscoveredParts = new HashSet<PartType>();
 
     public ResearchProject[] ResearchSteps;
-    int CurrentResearch = -1;
+    public int CurrentResearch = -1;
     Dictionary<PartType, int> ResearchProgress;
     float totalResearchParts = 0;
     float currentResearchParts = 0;
@@ -68,10 +68,15 @@ public class ScienceMachine : MonoBehaviour
         }
     }
 
+    bool OnFinalResearch()
+    {
+        return CurrentResearch == ResearchSteps.Length - 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1) && MouseOver) {
+        if (Input.GetMouseButton(1) && MouseOver && !OnFinalResearch()) {
             if (CurrentSpriteStrobe == null) {
                 PartType type = PartType.Gear;
                 foreach (var item in ResearchProgress.Keys) {
@@ -124,6 +129,10 @@ public class ScienceMachine : MonoBehaviour
 
     void ProgressMade(PartType type)
     {
+        if (OnFinalResearch()) {
+            input.gameObject.SetActive(false);
+        }
+
         Debug.LogFormat("Science Machine got {0}", type);
         if (ResearchProgress.ContainsKey(type)) {
             ResearchProgress[type] -= 1;
