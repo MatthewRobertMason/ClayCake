@@ -51,7 +51,7 @@ public class PlayerData : MonoBehaviour
     bool MouseOnObject()
     {
         var pt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(pt, Vector2.zero, Mathf.Infinity, Physics.AllLayers);
+        RaycastHit2D hit = Physics2D.Raycast(pt, Vector2.zero, Mathf.Infinity);
         return hit.collider != null;
     }
 
