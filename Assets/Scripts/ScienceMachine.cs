@@ -44,8 +44,13 @@ public class ScienceMachine : MonoBehaviour
     public SpriteRenderer ProjectSprite;
     SetCensor SpriteCensor;
     const int MaxCensor = 128;
+    bool MouseOver = false;
 
     public GameObject BuildMachinePrefab;
+
+    public GameObject SpriteStrobePrefab;
+    private GameObject CurrentSpriteStrobe;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +71,30 @@ public class ScienceMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButton(1) && MouseOver) {
+            if (CurrentSpriteStrobe == null) {
+                PartType type = PartType.Gear;
+                foreach (CostItem item in ResearchSteps[CurrentResearch].cost) {
+                    type = item.type;
+                    break;
+                }
+                CurrentSpriteStrobe = Instantiate(SpriteStrobePrefab, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
+                CurrentSpriteStrobe.GetComponent<SpriteStrobe>().DisplaySprite = FindObjectOfType<PlayerData>().PartSprite(type);
+                if (!DiscoveredParts.Contains(type)) {
+                    CurrentSpriteStrobe.GetComponent<SetCensor>().CensorPixelLevel = 64;
+                }
+            }
+        }
+    }
+
+    private void OnMouseEnter()
+    {
+        MouseOver = true;
+    }
+
+    private void OnMouseExit()
+    {
+        MouseOver = false;
     }
 
     void NextResearch()

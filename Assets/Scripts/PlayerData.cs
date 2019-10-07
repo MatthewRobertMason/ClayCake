@@ -25,6 +25,14 @@ public class PlayerData : MonoBehaviour
         return null;
     }
 
+    public Sprite PartSprite(PartType type)
+    {
+        switch (type) {
+            case PartType.Gear: return GearPrefab.GetComponent<Part>().KnownSprite;
+            case PartType.Plate: return PlatePrefab.GetComponent<Part>().KnownSprite;
+        }
+        return null;
+    }
 
     public List<PartType> inventory = new List<PartType>();
 
