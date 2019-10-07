@@ -46,7 +46,7 @@ public class PlayerData : MonoBehaviour
 
         // FOR DEBUGGING
         for(int ii = 0; ii < 50; ii++) {
-        //    inventory.Add(PartType.Gear);
+            inventory.Add(PartType.Gear);
         }
         sm = FindObjectOfType<ScienceMachine>();
     }
