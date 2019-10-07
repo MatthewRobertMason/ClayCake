@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplaySprite: {fileID: 0}
-  Duration: 5
+  Duration: 2
 --- !u!212 &2770611640513151020
 SpriteRenderer:
   m_ObjectHideFlags: 0

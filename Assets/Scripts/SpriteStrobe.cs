@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpriteStrobe : MonoBehaviour
 {
     public Sprite DisplaySprite;
-    public float Duration = 5;
+    public float Duration = 2;
 
     float counter = 0;
     SpriteRenderer sr;

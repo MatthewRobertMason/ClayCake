@@ -18,8 +18,7 @@ public class PlayerData : MonoBehaviour
 
     public static int ScaleCost(int cost)
     {
-        bool active = FindObjectOfType<PlayerData>().FastModeActive;
-        if (active) {
+        if (Options.IsFastModeActive()) {
             return cost / 10 + 1;
         }
         return cost;
