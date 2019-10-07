@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4308995091556272408}
   - component: {fileID: 4308995091556272409}
   - component: {fileID: 4308995091556272410}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: WindArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

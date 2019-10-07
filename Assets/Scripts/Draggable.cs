@@ -52,9 +52,21 @@ public class Draggable : MonoBehaviour
         }
     }
 
+    bool InObject = false;
+
+    private void OnMouseEnter()
+    {
+        InObject = true;
+    }
+
+    private void OnMouseExit()
+    {
+        InObject = false;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonUp(2) && AllowRotate) {
+        if (Input.GetMouseButtonUp(1) && AllowRotate && InObject) {
             rotateTarget.transform.Rotate(new Vector3(0, 0, 1), 45);
         }
     }
