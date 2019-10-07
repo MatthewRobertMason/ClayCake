@@ -75,7 +75,7 @@ public class PlayerData : MonoBehaviour
             Instantiate(MouseFlashPrefab, sm.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
         }
 
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(1) && !MouseOnObject()) {
             if (inventory.Count > 0) {
                 var type = inventory[0];
                 inventory.RemoveAt(0);
