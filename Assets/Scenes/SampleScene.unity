@@ -478,12 +478,12 @@ PrefabInstance:
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.0019
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.041879416
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -551,6 +551,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7712060295664821418, guid: fbd69fd5851c3d74d941371e4b0d16a9,
         type: 3}
+    - target: {fileID: 506445296426141532, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
+        type: 3}
+      propertyPath: Velocity.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 506445296426141532, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
+        type: 3}
+      propertyPath: Velocity.y
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c3e3a3b1cbd2f478256d7dba845c1f, type: 3}
 --- !u!1001 &978574452
@@ -738,12 +748,12 @@ PrefabInstance:
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5697546
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.393555
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 506445296426141533, guid: 31c3e3a3b1cbd2f478256d7dba845c1f,
         type: 3}
@@ -909,7 +919,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GearPrefab: {fileID: 3160392628231354186, guid: d42ac3c27b827e54ea2b5252db8f7c3c,
     type: 3}
-  PlatePrefab: {fileID: 0}
+  PlatePrefab: {fileID: 7712060295664821418, guid: fbd69fd5851c3d74d941371e4b0d16a9,
+    type: 3}
+  MouseFlashPrefab: {fileID: 8211188878536009069, guid: 394431e3f14bf49449b9e3875d0edd97,
+    type: 3}
   inventory: 
 --- !u!4 &1841635017
 Transform:

@@ -6,8 +6,11 @@ public class PlayerData : MonoBehaviour
 {
     public GameObject GearPrefab;
     public GameObject PlatePrefab;
+    
     public static int XMaximum = 45;
     public static int YMaximum = 20;
+
+    public GameObject MouseFlashPrefab;
 
     ScienceMachine sm;
     bool dragging;
@@ -32,7 +35,7 @@ public class PlayerData : MonoBehaviour
 
         // FOR DEBUGGING
         for(int ii = 0; ii < 50; ii++) {
-            inventory.Add(PartType.Gear);
+        //    inventory.Add(PartType.Gear);
         }
         sm = FindObjectOfType<ScienceMachine>();
     }
@@ -69,6 +72,7 @@ public class PlayerData : MonoBehaviour
 
         if (sm.hidden && inventory.Count > 0) {
             sm.Show();
+            Instantiate(MouseFlashPrefab, sm.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
         }
 
         if (Input.GetMouseButtonDown(1)) {
