@@ -174,6 +174,9 @@ public class ScienceMachine : MonoBehaviour
     public void R5UnlockFan()
     {
         FanUnlocked = true;
+        foreach (BuildMachine b in Object.FindObjectsOfType<BuildMachine>()) {
+            b.RefreshButtons();
+        }
     }
 
     public void R6IdentifyPlate()
@@ -185,6 +188,9 @@ public class ScienceMachine : MonoBehaviour
     public void R7UnlockBooster()
     {
         BoosterUnlocked = true;
+        foreach (BuildMachine b in Object.FindObjectsOfType<BuildMachine>()) {
+            b.RefreshButtons();
+        }
     }
 
     public void R8IdentifyCircuit()
@@ -196,6 +202,9 @@ public class ScienceMachine : MonoBehaviour
     public void R9UnlockPortal()
     {
         PortalUnlocked = true;
+        foreach (BuildMachine b in Object.FindObjectsOfType<BuildMachine>()) {
+            b.RefreshButtons();
+        }
     }
 
     public void R10RunForever()
