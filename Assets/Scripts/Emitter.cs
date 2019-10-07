@@ -11,24 +11,30 @@ public class Emitter : MonoBehaviour
     public Vector2 Velocity = new Vector2(0, 0);
     public int ExtraCapacity = 0;
 
+    private float currentTotalCooldown;
     public float currentCooldown;
     private List<GameObject> living = new List<GameObject>();
+
+    private GameObject nextOut;
+    private Vector3 nextOutFinalScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentCooldown = 2;
+        currentTotalCooldown = currentCooldown = 2;
+        PrepareNext();
     }
 
     void ResetCooldown()
     {
-        currentCooldown = EmitCooldown + Random.Range(-EmitCooldownJiggle, EmitCooldownJiggle);
+        currentTotalCooldown = currentCooldown = EmitCooldown + Random.Range(-EmitCooldownJiggle, EmitCooldownJiggle);
     }
 
     // Update is called once per frame
     void Update()
     {
         currentCooldown -= Time.deltaTime;
+        nextOut.transform.localScale = nextOutFinalScale * (1 - (currentCooldown / currentTotalCooldown));
         if (living.Count < LivingLimit + ExtraCapacity || LivingLimit < 0) {
             if(currentCooldown <= 0) {
                 EmitObject();
@@ -40,7 +46,10 @@ public class Emitter : MonoBehaviour
 
     void EmitObject()
     {
-        var obj = Instantiate(EmittedPrefab, transform.position, Quaternion.identity); ;
+        var obj = nextOut;
+        obj.transform.localScale = nextOutFinalScale;
+        obj.GetComponent<Rigidbody2D>().simulated = true;
+        obj.GetComponent<Rigidbody2D>().WakeUp();
         obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Velocity.x, Velocity.y);
         //   obj.transform.Rotate(Vector3.up, Random.Range(-180.0f, 180.0f));
         if (ExtraCapacity > 0) {
@@ -48,5 +57,15 @@ public class Emitter : MonoBehaviour
         } else {
             living.Add(obj);
         }
+
+        PrepareNext();
+    }
+
+    void PrepareNext()
+    {
+        nextOut = Instantiate(EmittedPrefab, transform.position, Quaternion.identity);
+        nextOut.GetComponent<Rigidbody2D>().simulated = false;
+        nextOutFinalScale = nextOut.transform.localScale;
+        nextOut.transform.localScale = new Vector3(0, 0);
     }
 }
