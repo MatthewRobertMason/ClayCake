@@ -479,6 +479,11 @@ MonoBehaviour:
     type: 3}
   PortalPrefab: {fileID: 4906073705583747353, guid: df0e0f470f6055f4ba147ce7632852ea,
     type: 3}
+  BuildIconsSprites:
+  - {fileID: 184950751378207249, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
+  - {fileID: 2130535880278150251, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
+  - {fileID: 5543941588292853863, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
+  - {fileID: -1863859237976802683, guid: 1b2b7d5e358f6604bb4ad7a8673300e3, type: 3}
 --- !u!50 &430359382106943504
 Rigidbody2D:
   serializedVersion: 4
@@ -920,6 +925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780329578095458316, guid: e4f38642e808ebd4fa95cc83bd5e156d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f38642e808ebd4fa95cc83bd5e156d, type: 3}
