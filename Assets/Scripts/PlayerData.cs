@@ -25,6 +25,14 @@ public class PlayerData : MonoBehaviour
         return null;
     }
 
+    public Sprite PartSprite(PartType type)
+    {
+        switch (type) {
+            case PartType.Gear: return GearPrefab.GetComponent<Part>().KnownSprite;
+            case PartType.Plate: return PlatePrefab.GetComponent<Part>().KnownSprite;
+        }
+        return null;
+    }
 
     public List<PartType> inventory = new List<PartType>();
 
@@ -75,7 +83,7 @@ public class PlayerData : MonoBehaviour
             Instantiate(MouseFlashPrefab, sm.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
         }
 
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(1) && !MouseOnObject()) {
             if (inventory.Count > 0) {
                 var type = inventory[0];
                 inventory.RemoveAt(0);
