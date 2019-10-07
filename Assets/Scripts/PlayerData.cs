@@ -8,6 +8,8 @@ public class PlayerData : MonoBehaviour
     public GameObject PlatePrefab;
     public GameObject CircuitPrefab;
 
+    public GameObject volumePanel;
+
     public FadeMusic fadeMusic;
     public GameObject LeftClickerImage;
     
@@ -96,6 +98,7 @@ public class PlayerData : MonoBehaviour
 
             fadeMusic.fadeMusic = true;
             Destroy(LeftClickerImage);
+            volumePanel.SetActive(true);
         }
 
         if (sm.hidden && inventory.Count > 0) {
