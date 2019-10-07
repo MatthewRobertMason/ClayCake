@@ -6,6 +6,9 @@ public class PlayerData : MonoBehaviour
 {
     public GameObject GearPrefab;
     public GameObject PlatePrefab;
+
+    public FadeMusic fadeMusic;
+    public GameObject LeftClickerImage;
     
     public static int XMaximum = 45;
     public static int YMaximum = 20;
@@ -76,6 +79,9 @@ public class PlayerData : MonoBehaviour
             foreach (Emitter x in FindObjectsOfType<Emitter>()) {
                 x.enabled = true;
             }
+
+            fadeMusic.fadeMusic = true;
+            Destroy(LeftClickerImage);
         }
 
         if (sm.hidden && inventory.Count > 0) {
