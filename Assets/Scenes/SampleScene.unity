@@ -2645,13 +2645,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have built the portal and now you can go home!
+  m_Text: 'You have reached Peak Performance!
+
+    You can use the portal to go home!'
 --- !u!222 &1930966267
 CanvasRenderer:
   m_ObjectHideFlags: 0

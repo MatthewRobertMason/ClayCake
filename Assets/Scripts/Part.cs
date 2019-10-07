@@ -14,7 +14,7 @@ public enum PartType
 
 public class Part : MonoBehaviour
 {
-    static public PartType[] AllTypes = { PartType.Gear, PartType.Plate };
+    static public PartType[] AllTypes = { PartType.Gear, PartType.Plate, PartType.Circuit };
 
     public PartType Type;
     PlayerData player;

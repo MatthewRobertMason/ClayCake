@@ -74,8 +74,8 @@ public class ScienceMachine : MonoBehaviour
         if (Input.GetMouseButton(1) && MouseOver) {
             if (CurrentSpriteStrobe == null) {
                 PartType type = PartType.Gear;
-                foreach (CostItem item in ResearchSteps[CurrentResearch].cost) {
-                    type = item.type;
+                foreach (var item in ResearchProgress.Keys) {
+                    type = item;
                     break;
                 }
                 CurrentSpriteStrobe = Instantiate(SpriteStrobePrefab, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
