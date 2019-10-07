@@ -7,6 +7,7 @@ public enum PartType
 {
     Gear,
     Plate,
+    Circuit
 }
 
 

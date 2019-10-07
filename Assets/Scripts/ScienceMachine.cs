@@ -115,8 +115,9 @@ public class ScienceMachine : MonoBehaviour
         totalResearchParts = 0;
         currentResearchParts = 0;
         foreach (CostItem item in ResearchSteps[CurrentResearch].cost) {
-            ResearchProgress[item.type] = item.number;
-            totalResearchParts += item.number;
+            int number = PlayerData.ScaleCost(item.number);
+            ResearchProgress[item.type] = number;
+            totalResearchParts += number;
         }
     }
 
@@ -178,6 +179,28 @@ public class ScienceMachine : MonoBehaviour
     public void R6IdentifyPlate()
     {
         DiscoverPart(PartType.Plate);
+    }
+
+    public bool BoosterUnlocked = false;
+    public void R7UnlockBooster()
+    {
+        BoosterUnlocked = true;
+    }
+
+    public void R8IdentifyCircuit()
+    {
+        DiscoverPart(PartType.Circuit);
+    }
+
+    public bool PortalUnlocked = false;
+    public void R9UnlockPortal()
+    {
+        PortalUnlocked = true;
+    }
+
+    public void R10RunForever()
+    {
+        CurrentResearch--;
     }
 
 

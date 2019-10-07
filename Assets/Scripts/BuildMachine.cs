@@ -18,9 +18,13 @@ public class BuildMachine : MonoBehaviour
 
     public GameObject FunnelPrefab;
     public GameObject FanPrefab;
+    public GameObject BoosterPrefab;
+    public GameObject PortalPrefab;
 
     CostItem[] FunnelCost = { new CostItem(PartType.Gear, 10) };
     CostItem[] FanCost = { new CostItem(PartType.Gear, 30), new CostItem(PartType.Plate, 4) };
+    CostItem[] BoosterCost = { new CostItem(PartType.Gear, 10), new CostItem(PartType.Plate, 20) };
+    CostItem[] PortalCost = { new CostItem(PartType.Gear, 50), new CostItem(PartType.Plate, 50), new CostItem(PartType.Circuit, 50) };
 
     private int current = 0;
     private GameObject[] buildOptions;
@@ -32,6 +36,8 @@ public class BuildMachine : MonoBehaviour
             default:
             case 0: return FunnelCost;
             case 1: return FanCost;
+            case 2: return BoosterCost;
+            case 3: return PortalCost;
         }
     }
 
@@ -41,13 +47,15 @@ public class BuildMachine : MonoBehaviour
             default:
             case 0: return sm.FunnelUnlocked;
             case 1: return sm.FanUnlocked;
+            case 2: return sm.BoosterUnlocked;
+            case 3: return sm.PortalUnlocked;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        buildOptions = new GameObject[2] { FunnelPrefab, FanPrefab };
+        buildOptions = new GameObject[4] { FunnelPrefab, FanPrefab, BoosterPrefab, PortalPrefab };
         foreach (PartType p in Part.AllTypes) {
             Inventory[p] = 0;
         }
@@ -65,7 +73,7 @@ public class BuildMachine : MonoBehaviour
     bool InventoryHas(CostItem[] items)
     {
         foreach (var item in items) {
-            if (Inventory[item.type] < item.number) {
+            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return false;
             }
         }
@@ -75,7 +83,7 @@ public class BuildMachine : MonoBehaviour
     PartType MissingPart()
     {
         foreach (var item in CurrentCost()) {
-            if (Inventory[item.type] < item.number) {
+            if (Inventory[item.type] < PlayerData.ScaleCost(item.number)) {
                 return item.type;
             }
         }
@@ -85,7 +93,7 @@ public class BuildMachine : MonoBehaviour
     void InventoryRemove(CostItem[] items)
     {
         foreach (var item in items) {
-            Inventory[item.type] -= item.number;
+            Inventory[item.type] -= PlayerData.ScaleCost(item.number);
         }
     }
 
