@@ -34,7 +34,7 @@ public class Emitter : MonoBehaviour
     void Update()
     {
         currentCooldown -= Time.deltaTime;
-        nextOut.transform.localScale = nextOutFinalScale * (1 - (currentCooldown / currentTotalCooldown));
+        nextOut.transform.localScale = nextOutFinalScale * (1 - (Mathf.Max(currentCooldown, 1) / currentTotalCooldown));
         if (living.Count < LivingLimit + ExtraCapacity || LivingLimit < 0) {
             if(currentCooldown <= 0) {
                 EmitObject();
