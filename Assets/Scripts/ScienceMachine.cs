@@ -180,6 +180,28 @@ public class ScienceMachine : MonoBehaviour
         DiscoverPart(PartType.Plate);
     }
 
+    public bool BoosterUnlocked = false;
+    public void R7UnlockBooster()
+    {
+        BoosterUnlocked = true;
+    }
+
+    public void R8IdentifyCircuit()
+    {
+        DiscoverPart(PartType.Circuit);
+    }
+
+    public bool PortalUnlocked = false;
+    public void R9UnlockPortal()
+    {
+        PortalUnlocked = true;
+    }
+
+    public void R10RunForever()
+    {
+        CurrentResearch--;
+    }
+
 
     public void DiscoverPart(PartType type)
     {
