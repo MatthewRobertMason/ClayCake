@@ -383,7 +383,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.88235295, g: 0.9019608, b: 0.9411765, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2262,6 +2262,11 @@ PrefabInstance:
       propertyPath: volumePanel
       value: 
       objectReference: {fileID: 1941072917}
+    - target: {fileID: 986632726690950382, guid: 3f94b57894e117842ae7246c09778cfc,
+        type: 3}
+      propertyPath: cursorVisible
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f94b57894e117842ae7246c09778cfc, type: 3}
 --- !u!1 &1940652129

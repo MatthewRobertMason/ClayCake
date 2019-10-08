@@ -18,6 +18,8 @@ public class PlayerData : MonoBehaviour
 
     public bool FastModeActive = false;
 
+    public bool cursorVisible = false;
+
     public static int ScaleCost(int cost)
     {
         if (Options.IsFastModeActive()) {
@@ -57,7 +59,7 @@ public class PlayerData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = cursorVisible;
 
         // FOR DEBUGGING
         for(int ii = 0; ii < 50; ii++) {
